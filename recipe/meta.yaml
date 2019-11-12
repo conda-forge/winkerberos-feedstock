@@ -10,7 +10,7 @@ source:
 
 build:
   number: 0
-  skip: True  # [not win]
+  skip: True  # [not win or py27]
   script: "{{ PYTHON }} -m pip install . --no-deps -vv"
 
 requirements:
