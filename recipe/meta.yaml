@@ -1,4 +1,4 @@
-{% set version = "0.8.0" %}
+{% set version = "0.9.0" %}
 
 package:
   name: winkerberos
@@ -6,10 +6,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/w/winkerberos/winkerberos-{{ version }}.zip
-  sha256: 2af9776b27dfdfe0bfdce1960c81078302588067112c32c663dc3a01412e04da
+  sha256: be14d27ce7a3b29775dd1018b0ae06f29a4025070839ffb1465ab120e287c479
 
 build:
-  number: 2
+  number: 0
   skip: true  # [not win or py27]
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
