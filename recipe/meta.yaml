@@ -1,21 +1,26 @@
+{% set name = "winkerberos" %}
 {% set version = "0.9.1" %}
 
 package:
-  name: winkerberos
+  name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/w/winkerberos/winkerberos-{{ version }}.zip
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/winkerberos-{{ version }}.zip
   sha256: 02ec925c2aa4fe4f7656792a76e346d8fab13e12ced2732354a21958adfe92c6
 
 build:
+  skip: true  # [py<36]
+  skip: true  # [not win]
+  script: {{ PYTHON }} -m pip install . -vv
   number: 0
-  skip: true  # [not win or py27]
-  script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
+  build:
+    - {{ compiler('c') }}
   host:
     - python
+    - sphinx
     - pip
   run:
     - python
@@ -23,6 +28,10 @@ requirements:
 test:
   imports:
     - winkerberos
+  commands:
+    - pip check
+  requires:
+    - pip
 
 about:
   home: https://github.com/mongodb-labs/winkerberos
