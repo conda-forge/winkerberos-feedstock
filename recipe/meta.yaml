@@ -1,5 +1,5 @@
 {% set name = "winkerberos" %}
-{% set version = "0.11.0" %}
+{% set version = "0.12.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,13 +7,13 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/winkerberos-{{ version }}.tar.gz
-  sha256: 472632ce2bd0086e408ccd481ecc0f41e442d48076f3a240fba546af0022e50d
+  sha256: b19b9b8c87ab9dc76bb325f0dd4e93a2d669abc68d2283eec25ed67176ad7ad3
 
 build:
   skip: true  # [py<38]
   skip: true  # [not win]
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 
 requirements:
   build:
