@@ -1,13 +1,13 @@
 {% set name = "winkerberos" %}
-{% set version = "0.12.0" %}
+{% set version = "0.12.2" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/winkerberos-{{ version }}.tar.gz
-  sha256: b19b9b8c87ab9dc76bb325f0dd4e93a2d669abc68d2283eec25ed67176ad7ad3
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/winkerberos-{{ version }}.tar.gz
+  sha256: ff91daed04727a0362892802ee093d8da11f08536393526bdf3bc64e04079faa
 
 build:
   skip: true  # [py<38]
